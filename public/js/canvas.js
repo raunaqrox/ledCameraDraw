@@ -20,8 +20,8 @@ function clearScreen(){
 
 function drawDrag(prevX, prevY, currX, currY, penSize){
     ctx.beginPath();
-    ctx.moveTo(prevX, prevY);
-    ctx.lineTo(currX,currY);
+    ctx.moveTo(canvas.width - prevX, prevY);
+    ctx.lineTo(canvas.width - currX,currY);
     ctx.lineWidth = penSize;
     ctx.stroke();
     ctx.closePath();

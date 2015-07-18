@@ -8,7 +8,7 @@
 	  var city = location.address.city;
     var longitude = location.coords.longitude;
     var latitude = location.coords.latitude;
-    document.getElementById('location').innerText = longitude + " : " + latitude + " " + location.accuracy;
+    document.getElementById('location').innerText = longitude + " : " + latitude + " : " + location.coords.accuracy;
 }
 function onGeoError(error) {
         console.log(error);
