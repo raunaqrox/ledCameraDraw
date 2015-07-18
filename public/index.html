@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="js/lib/tracking-min.js"></script>
-            <script src="js/main.js"></script>
+    <script src="js/lib/tracking-min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/lib/geoLib.js"></script>
+    <script src="js/geo.js"></script>
     </head>
     <body>
 
   <div class="select">
     <label for="videoSource">Video source: </label><select id="videoSource"></select>
   </div>
-      <video id="v" width="400" height="300" preload autoplay loop muted></video>
-      <!-- <canvas id="c" width="400" height="300"> -->
-
-        <!-- // <script src="js/canvas.js"></script> -->
+      <video id="v" width="600" height="450" preload autoplay loop muted></video>
+      <canvas id="c" width="600" height="450"></canvas>
+        <div id="location"></div>
+      <script src="js/canvas.js"></script>
     </body>
 </html>

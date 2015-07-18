@@ -8,7 +8,6 @@ function drawCube(x, y, s){
     prev.y = y;
   }
   start = false;
-//  ctx.clearRect(0,0,canvas.width, canvas.height);
   drawDrag(prev.x, prev.y, x, y, s);
 }
 function drawDrag(prevX, prevY, currX, currY, penSize){
