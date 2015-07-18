@@ -31,6 +31,7 @@ function successCallback(stream) {
   window.stream = stream; // make stream available to console
   videoElement.src = window.URL.createObjectURL(stream);
   videoElement.play();
+  startTracking();
 }
 
 function errorCallback(error){
@@ -63,7 +64,7 @@ start();
             // No colors were detected in this frame.
           } else {
             event.data.forEach(function(rect) {
-              console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
+              //console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
               drawCube(rect.x, rect.y, 10);
             });
           }
