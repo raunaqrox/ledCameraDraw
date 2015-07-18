@@ -6,7 +6,7 @@ window.onload = function(){
                             navigator.mozGetUserMedia ||
                             navigator.msGetUserMedia);
   function gotSources(sourceInfos) {
-    videoStream = sourceInfos[1];
+    videoStream = sourceInfos[0];
   }
 
   if (typeof MediaStreamTrack === 'undefined'){
@@ -27,7 +27,7 @@ window.onload = function(){
            var url = window.URL || window.webkitURL;
            v.src = url ? url.createObjectURL(stream) : stream;
            v.play();
-           startTracking();
+          // startTracking();
         },
         function(error) {
            alert('Something went wrong. (error code ' + error.code + ')');
