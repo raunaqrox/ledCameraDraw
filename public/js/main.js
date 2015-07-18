@@ -1,14 +1,26 @@
 window.onload = function(){
   var v = document.getElementById('v');
+  var videoStream = '';
   navigator.getUserMedia = (navigator.getUserMedia ||
                             navigator.webkitGetUserMedia ||
                             navigator.mozGetUserMedia ||
                             navigator.msGetUserMedia);
+  function gotSources(sourceInfos) {
+    videoStream = sourceInfos[1];
+  }
+
+  if (typeof MediaStreamTrack === 'undefined'){
+    alert('This browser does not support MediaStreamTrack.\n\nTry Chrome Canary.');
+  } else {
+    MediaStreamTrack.getSources(gotSources);
+  }
   if (navigator.getUserMedia) {
      // Request access to video only
      navigator.getUserMedia(
         {
-           video:true,
+           video:{
+             optional : [{sourceId : videoStream}]
+           },
            audio:false
         },
         function(stream) {
